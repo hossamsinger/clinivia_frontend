@@ -1,0 +1,183 @@
+.sidebar {
+  width: 230px;
+  height: 100vh;
+  background: #ffffff;
+  border-left: 1px solid #eee;
+  position: fixed;
+  right: 0;
+  top: 0;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* 🔥 collapsed state */
+.sidebar.collapsed {
+  width: 70px;
+}
+
+/* user section */
+.sidebar-logo {
+  text-align: center;
+  padding: 20px 20px 10px;
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sidebar-logo img {
+  width: 35px;
+}
+
+/* اخفاء النص لما collapse */
+.sidebar.collapsed .sidebar-logo span {
+  display: none;
+}
+
+.sidebar-user {
+  text-align: center;
+  padding: 20px 20px 10px;
+  border-bottom: 1px solid #eee;
+  transition: 0.3s;
+}
+
+.sidebar-user img {
+  width: 70px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.342) 0px 5px 15px;
+  transition: 0.3s;
+}
+
+/* تصغير الصورة */
+.sidebar.collapsed .sidebar-user img {
+  width: 40px;
+}
+
+/* اخفاء بيانات اليوزر */
+.sidebar.collapsed .sidebar-user h5,
+.sidebar.collapsed .sidebar-user span {
+  display: none;
+}
+
+/* menu */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  height: calc(100vh - 120px);
+}
+
+/* menu title */
+.menu-title {
+  font-size: 11px;
+  color: #999;
+  padding: 12px 20px;
+}
+
+/* اخفاء title */
+.sidebar.collapsed .menu-title {
+  display: none;
+}
+
+/* menu item */
+.sidebar-menu li {
+  width: 100%;
+}
+
+/* links */
+.sidebar-menu a {
+  display: flex;
+  align-items: center;
+  padding: 11px 20px;
+  text-decoration: none;
+  color: #333;
+  transition: 0.2s;
+  font-size: 14px;
+  border-radius: 8px;
+  margin: 2px 8px;
+}
+
+.sidebar-menu a:hover {
+  background: #f5f6f8;
+}
+
+/* 🔥 لما collapse نخلي الايقونات في النص */
+.sidebar.collapsed .sidebar-menu a {
+  justify-content: center;
+  padding: 12px 0;
+}
+
+/* icon */
+.sidebar-menu i {
+  width: 22px;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* text */
+.menu-text {
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+/* اخفاء النص */
+.sidebar.collapsed .menu-text {
+  display: none;
+}
+
+/* plus icon */
+.plus-icon {
+  margin-right: auto;
+  font-size: 16px;
+  font-weight: bold;
+  color: #666;
+  transition: 0.3s;
+}
+
+/* اخفاء + */
+.sidebar.collapsed .plus-icon {
+  display: none;
+}
+
+/* submenu */
+.has-submenu ul {
+  list-style: none;
+  padding-right: 40px;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+/* open submenu */
+.has-submenu ul.open {
+  max-height: 200px;
+}
+
+/* submenu links */
+.has-submenu ul li a {
+  padding: 8px 20px;
+  font-size: 13px;
+  color: #555;
+}
+
+.has-submenu ul li a:hover {
+  background: #f0f2f5;
+}
+
+/* 🔥 hide submenu completely in collapsed */
+.sidebar.collapsed .has-submenu ul {
+  display: none !important;
+}
+
+/* 🔥 hover effect */
+.sidebar.collapsed .sidebar-menu a:hover {
+  background: #e9edf3;
+  transform: scale(1.05);
+}

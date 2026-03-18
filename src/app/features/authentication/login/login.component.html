@@ -1,0 +1,49 @@
+<div class="container" id="container">
+  <div class="form-container sign-up-container">
+    <form action="#">
+      <h2>تسجيل الحساب</h2>
+      <div class="social-container">
+        <a href="#" class="social"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
+        <a href="#" class="social"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      <span>او يمكنك التسجيل باستخدام </span>
+      <input type="text" placeholder="الاسم" />
+      <input type="email" placeholder="البريد الألكتروني  " />
+      <input type="password" placeholder="الرقم السري" />
+      <button type="button" (click)="register()">تسجيل جديد</button>
+    </form>
+  </div>
+  <div class="form-container sign-in-container">
+    <form action="#">
+      <h2>تسجيل الدخول</h2>
+      <div class="social-container">
+        <a href="#" class="social"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
+        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <span>او يمكنك التسجيل باستخدام</span>
+      <input type="email" placeholder="البريد الألكتروني " />
+      <input type="password" placeholder="الرقم السري" />
+      <a href="#">هل نسيت الرقم السري ؟</a>
+      <!-- <button type="button" [routerLink]="['/dashboard']">تسجيل</button> -->
+    <button type="button" (click)="login()">تسجيل الدخول</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h2>مرحبا بك</h2>
+        <p>اذا كان لديك حساب بالفعل يمكنك تسجيل الدخول</p>
+        <button class="ghost" id="signIn">تسجيل الدخول</button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h2>مرحبا بك</h2>
+        <p>
+          يمكنك ادخال بياناتك للتسجيل وبدا رحله جديدة معنا والتمتع بمزيا التطبيق
+        </p>
+        <button class="ghost" id="signUp">مستخدم جديد</button>
+      </div>
+    </div>
+  </div>
+</div>

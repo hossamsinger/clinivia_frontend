@@ -1,0 +1,214 @@
+<div class="sidebar" [class.collapsed]="isCollapsed">
+  <!-- user -->
+  <div class="sidebar-logo">
+    <img src="/assets/images/logo.png" alt="user" />
+    <span>عيادتي</span>
+  </div>
+  <div class="sidebar-user">
+    <img src="/assets/images/admin.jpg" alt="user" />
+    <h5>حسام مصطفي</h5>
+    <span>ادمن</span>
+  </div>
+
+  <!-- menu -->
+  <ul class="sidebar-menu">
+    <li class="menu-title">الصفحة الرئيسية</li>
+
+    <!-- Dashboards -->
+    <li class="has-submenu">
+      <a (click)="toggleMenu('dashboard')">
+        <i class="fa-solid fa-house"></i>
+        <span class="menu-text">لوحه التحكم</span>
+
+        <span class="plus-icon">
+          {{ openMenu === "dashboard" ? "-" : "+" }}
+        </span>
+      </a>
+
+      <ul [class.open]="openMenu === 'dashboard'">
+        <li><a routerLink="/admin_dashboard">المدير</a></li>
+        <li><a routerLink="/patient_dashboard">المرضي </a></li>
+        <li><a routerLink="/doctors_dashboard">الاطباء</a></li>
+        <li><a routerLink="/nurces_dashboard">التمريض</a></li>
+      </ul>
+    </li>
+
+    <!-- Doctors -->
+    <li class="has-submenu">
+      <a (click)="toggleMenu('doctor')">
+        <i class="fa-solid fa-user-doctor"></i>
+        <span class="menu-text">الأطباء</span>
+
+        <span class="plus-icon">
+          {{ openMenu === "doctor" ? "-" : "+" }}
+        </span>
+      </a>
+
+      <ul [class.open]="openMenu === 'doctor'">
+        <li><a routerLink="/doctor">كل الاطباء</a></li>
+        <li><a routerLink="/doctor">Doctor 2</a></li>
+      </ul>
+    </li>
+
+    <!-- Patients -->
+    <li class="has-submenu">
+      <a (click)="toggleMenu('patient')">
+        <i class="fa-solid fa-person"></i>
+        <span class="menu-text">المرضي</span>
+
+        <span class="plus-icon">
+          {{ openMenu === "patient" ? "-" : "+" }}
+        </span>
+      </a>
+
+      <ul [class.open]="openMenu === 'patient'">
+        <li><a routerLink="/patient">Patient 1</a></li>
+        <li><a routerLink="/patient">Patient 2</a></li>
+      </ul>
+    </li>
+
+    <!-- Appointments -->
+    <li class="has-submenu">
+      <a (click)="toggleMenu('appointment')">
+        <i class="fa-solid fa-book-medical"></i>
+        <span class="menu-text">المواعيد</span>
+
+        <span class="plus-icon">
+          {{ openMenu === "appointment" ? "-" : "+" }}
+        </span>
+      </a>
+
+      <ul [class.open]="openMenu === 'appointment'">
+        <li><a routerLink="/appointment">Appointment 1</a></li>
+        <li><a routerLink="/appointment">Appointment 2</a></li>
+      </ul>
+    </li>
+
+    <!-- Room Allotment -->
+    <li class="has-submenu">
+      <a (click)="toggleMenu('room')">
+        <i class="fa-solid fa-bed"></i>
+        <span class="menu-text">تخصيص الغرف</span>
+
+        <span class="plus-icon">
+          {{ openMenu === "room" ? "-" : "+" }}
+        </span>
+      </a>
+
+      <ul [class.open]="openMenu === 'room'">
+        <li><a routerLink="/room">Room 1</a></li>
+        <li><a routerLink="/room">Room 2</a></li>
+      </ul>
+    </li>
+
+    <!-- laboratories -->
+    <li class="has-submenu">
+      <a (click)="toggleMenu('laboratory')">
+        <i class="fa-solid fa-flask"></i>
+        <span class="menu-text">المختبرات</span>
+
+        <span class="plus-icon">
+          {{ openMenu === "laboratory" ? "-" : "+" }}
+        </span>
+      </a>
+
+      <ul [class.open]="openMenu === 'laboratory'">
+        <li><a routerLink="/laboratory">Laboratory 1</a></li>
+        <li><a routerLink="/laboratory">Laboratory 2</a></li>
+      </ul>
+    </li>
+
+    <!-- Operation Theatre -->
+    <li class="has-submenu">
+      <a (click)="toggleMenu('operation')">
+        <i class="fa-solid fa-hospital"></i>
+        <span class="menu-text">العمليات</span>
+
+        <span class="plus-icon">
+          {{ openMenu === "operation" ? "-" : "+" }}
+        </span>
+      </a>
+
+      <ul [class.open]="openMenu === 'operation'">
+        <li><a routerLink="/operation">Operation 1</a></li>
+        <li><a routerLink="/operation">Operation 2</a></li>
+      </ul>
+    </li>
+
+    <!-- Ambulance -->
+    <li class="has-submenu">
+      <a (click)="toggleMenu('ambulance')">
+        <i class="fa-solid fa-ambulance"></i>
+        <span class="menu-text">الاسعافات </span>
+
+        <span class="plus-icon">
+          {{ openMenu === "ambulance" ? "-" : "+" }}
+        </span>
+      </a>
+
+      <ul [class.open]="openMenu === 'ambulance'">
+        <li><a routerLink="/ambulance">Ambulance 1</a></li>
+        <li><a routerLink="/ambulance">Ambulance 2</a></li>
+      </ul>
+    </li>
+
+    <!-- Pharmacy -->
+    <li class="has-submenu">
+      <a (click)="toggleMenu('pharmacy')">
+        <i class="fa-solid fa-pills"></i>
+        <span class="menu-text">الصيدلية</span>
+
+        <span class="plus-icon">
+          {{ openMenu === "pharmacy" ? "-" : "+" }}
+        </span>
+      </a>
+
+      <ul [class.open]="openMenu === 'pharmacy'">
+        <li><a routerLink="/pharmacy">Pharmacy 1</a></li>
+        <li><a routerLink="/pharmacy">Pharmacy 2</a></li>
+      </ul>
+    </li>
+
+    <!-- Blood Bank -->
+    <li class="has-submenu">
+      <a (click)="toggleMenu('bloodbank')">
+        <i class="fa-solid fa-dna"></i>
+        <span class="menu-text">البنك الدم</span>
+
+        <span class="plus-icon">
+          {{ openMenu === "bloodbank" ? "-" : "+" }}
+        </span>
+      </a>
+
+      <ul [class.open]="openMenu === 'bloodbank'">
+        <li><a routerLink="/bloodbank">Blood Bank 1</a></li>
+        <li><a routerLink="/bloodbank">Blood Bank 2</a></li>
+      </ul>
+    </li>
+
+    <!-- settings -->
+    <li class="has-submenu">
+      <a (click)="toggleMenu('settings')">
+        <i class="fa-solid fa-gear"></i>
+        <span class="menu-text">الاعدادات</span>
+
+        <span class="plus-icon">
+          {{ openMenu === "settings" ? "-" : "+" }}
+        </span>
+      </a>
+
+      <ul [class.open]="openMenu === 'settings'">
+        <li><a routerLink="/settings">Settings 1</a></li>
+        <li><a routerLink="/settings">Settings 2</a></li>
+      </ul>
+    </li>
+
+    <!-- logout -->
+    <li>
+      <a routerLink="/login">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span class="menu-text">تسجيل الخروج</span>
+      </a>
+    </li>
+  </ul>
+</div>
