@@ -67,11 +67,12 @@
 .header-right {
   display: flex;
   align-items: center;
-  flex-direction: row-reverse;
+  justify-content: center;
   gap: 20px;
 }
 
 .icon {
+  font-size: 18px;
   position: relative;
   cursor: pointer;
 }
@@ -90,15 +91,21 @@
 }
 
 .language img {
-  width: 22px;
+  width: 32px;
+  height: 32px;
   border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.language img:hover {
+  transform: scale(1.1);
 }
 
 .user {
   display: flex;
   align-items: center;
-  gap: 1px;
-  flex-direction: column;
+  gap: 5px;
+  // flex-direction: column;
 }
 .user span {
   font-size: 13px;
@@ -108,4 +115,10 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user img:hover {
+  transform: scale(1.1);
 }
