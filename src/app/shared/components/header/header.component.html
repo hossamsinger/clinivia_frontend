@@ -1,4 +1,4 @@
-<header class="top-header">
+<header class="top-header" [class.collapsed]="isCollapsed">
   <!-- right -->
   <div class="header-right">
     <div class="icon">
@@ -9,13 +9,16 @@
       <i class="fa fa-bell"></i>
       <span class="badge">3</span>
     </div>
+    <div class="icon darklight" (click)="toggleTheme()">
+      <i class="fa" [ngClass]="isDark ? 'fa-sun' : 'fa-moon'"></i>
+    </div>
     <div class="language">
       <img src="assets/images/egypt.png" alt="flag" />
     </div>
 
     <div class="user">
       <img src="assets/images/admin.jpg" alt="user" />
-      <!-- <span>حسام  مصطفي</span> -->
+      <!-- <span>حسام مصطفي</span> -->
     </div>
   </div>
 

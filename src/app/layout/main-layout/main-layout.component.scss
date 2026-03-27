@@ -1,0 +1,26 @@
+/* layout */
+.layout {
+  display: flex;
+}
+
+/* main content */
+.main {
+  width: calc(100% - 220px);
+  margin-right: 220px;
+  transition: all 0.3s ease;
+}
+
+/* لما sidebar يصغر */
+.layout.collapsed .main {
+  width: calc(100% - 70px);
+  margin-right: 70px;
+}
+
+.page-content {
+  margin-top: 54px;
+  padding: 10px;
+  direction: rtl;
+  transition: 0.3s;
+  min-height: calc(100vh - 50px);
+  background: #f5f6f8;
+}

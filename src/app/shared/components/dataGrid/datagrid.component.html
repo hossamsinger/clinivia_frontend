@@ -1,0 +1,26 @@
+<dx-data-grid
+  class="dx-card wide-card"
+  [dataSource]="data"
+  [noDataText]="'لاتوجد بيانات حالية'"
+  [width]="'100%'"
+  [height]="700"
+  [columnAutoWidth]="true"
+  [showBorders]="true"
+  [rowAlternationEnabled]="true"
+  [columnHidingEnabled]="true"
+  [allowColumnReordering]="true"
+  [rtlEnabled]="true"
+  [showColumnLines]="true"
+  [showRowLines]="true"
+>
+  <dxi-column dataField="name"caption="اسم الصورة"  ></dxi-column>
+  <dxi-column dataField="type" caption="نوع الصورة"></dxi-column>
+  <dxi-column dataField="date" caption="التاريخ" dataType="date"></dxi-column>
+  <!-- Pagination -->
+  <dxo-paging [pageSize]="5"></dxo-paging>
+  <dxo-pager
+    [visible]="true"
+    [showPageSizeSelector]="true"
+    [allowedPageSizes]="[5, 10, 20]"
+  ></dxo-pager>
+</dx-data-grid>

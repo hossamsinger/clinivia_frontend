@@ -14,6 +14,7 @@ export class SidebarComponent {
   constructor(public sidebarService: SidebarService) {}
   openMenu: string | null = null;
   isCollapsed = false;
+  isDarkMode = false;
   ngOnInit() {
     this.sidebarService.isCollapsed$.subscribe((state) => {
       this.isCollapsed = state;

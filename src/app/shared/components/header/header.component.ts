@@ -1,16 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SidebarService } from '../../services/sidebar.services';
+import { ThemeService } from '../../services/theme.services';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [NgClass],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
-  constructor(public sidebarService: SidebarService) {}
+export class HeaderComponent implements OnInit {
+  isCollapsed = false;
+  isDark = false;
+  constructor(
+    public sidebarService: SidebarService,
+    private themeService: ThemeService,
+  ) {}
+  ngOnInit() {
+    this.sidebarService.isCollapsed$.subscribe((state) => {
+      this.isCollapsed = state;
+    });
+  }
   toggleSidebar() {
     this.sidebarService.toggle();
+  }
+  toggleTheme() {
+    this.isDark = !this.isDark;
+    this.themeService.toggleTheme();
   }
 }

@@ -5,7 +5,31 @@
   box-sizing: border-box;
   font-family: "Cairo", sans-serif;
 }
+:root {
+  --bg-color: #f5f6fa;
+  --text-color: #333;
+}
+
+body.dark-theme {
+  --bg-color: #1e1e2f;
+  --text-color: #fff;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
 
 body {
   background-color: #cfe1eb;
+}
+
+body.dark-theme {
+  --bg-color: #1e1e2f;
+  --text-color: #fff;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
 }

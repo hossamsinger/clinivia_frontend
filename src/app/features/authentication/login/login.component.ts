@@ -1,9 +1,9 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { RouterLink, Router } from '@angular/router';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
@@ -23,9 +23,9 @@ export class LoginComponent implements AfterViewInit {
     });
   }
   login() {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/admin_dashboard']);
   }
   register() {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/admin_dashboard']);
   }
 }
