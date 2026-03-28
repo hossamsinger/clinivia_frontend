@@ -36,6 +36,7 @@
             ],
             "styles": [
               "src/styles.scss",
+              "src/app/assets/styles/dx.material.custom-scheme.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
@@ -100,6 +101,7 @@
             ],
             "styles": [
               "src/styles.scss",
+              "src/app/assets/styles/dx.material.custom-scheme.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
