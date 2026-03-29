@@ -24,3 +24,9 @@
   min-height: calc(100vh - 50px);
   background: #f5f6f8;
 }
+apx-chart {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden;
+}

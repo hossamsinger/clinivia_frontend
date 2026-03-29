@@ -7,6 +7,8 @@ import {
   ApexTooltip,
   ApexFill,
   ApexAxisChartSeries,
+  ApexPlotOptions,
+  ApexXAxis,
 } from 'ng-apexcharts';
 
 export type ChartOptions = {
@@ -15,6 +17,8 @@ export type ChartOptions = {
   stroke: ApexStroke;
   tooltip: ApexTooltip;
   fill: ApexFill;
+  plotOptions: ApexPlotOptions;
+  xaxis: ApexXAxis;
 };
 
 @Component({
@@ -38,27 +42,37 @@ export class AreaChartComponent {
         },
       ],
       chart: {
-        type: 'line',
-        height: 80,
+        type: 'area', 
+        height: 170,
         sparkline: {
-          enabled: true, // مهم عشان الشكل الصغير
+          enabled: true, 
         },
       },
+
+      plotOptions: {
+        bar: {
+          columnWidth: '50%',
+          borderRadius: 4,
+        },
+      },
+
       stroke: {
-        curve: 'smooth',
-        width: 3,
-        colors: ['#7B3FF2'],
+        show: false, // bars don’t need stroke usually
       },
+
       fill: {
-        type: 'gradient',
-        gradient: {
-          shadeIntensity: 1,
-          opacityFrom: 0.4,
-          opacityTo: 0.1,
+        colors: ['#7B3FF2'], // solid color instead of gradient
+      },
+
+      tooltip: {
+        enabled: true,
+        y: {
+          formatter: (val) => `${val} appointments`,
         },
       },
-      tooltip: {
-        enabled: false,
+
+      xaxis: {
+        categories: [],
       },
     };
   }

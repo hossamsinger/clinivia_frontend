@@ -23,9 +23,11 @@ export class LoginComponent implements AfterViewInit {
     });
   }
   login() {
-    this.router.navigate(['/admin_dashboard']);
+    // this.router.navigate(['/admin_dashboard']);
+    this.router.navigate(['/doctor_dashboard']);
   }
   register() {
-    this.router.navigate(['/admin_dashboard']);
+    // this.router.navigate(['/admin_dashboard']);
+    this.router.navigate(['/doctor_dashboard']);
   }
 }

@@ -4,7 +4,13 @@ import { MainLayoutComponent } from './app/layout/main-layout/main-layout.compon
 
 export const routes: Routes = [
   // Auth Layout (Login only)
+    {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
   {
+    
     path: '',
     component: AuthLayoutComponent,
     children: [

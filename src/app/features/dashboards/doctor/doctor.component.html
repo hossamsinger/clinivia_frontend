@@ -1,1 +1,121 @@
-<p>doctor works!</p>
+<section class="doctor-dashboard">
+  <div class="row dashboard">
+    <!-- right Side -->
+    <div class="col-9 content">
+      <div class="top-content">
+        <div class="right-side">
+          <div class="person-data">
+            <h5>أهلاً بعودتك</h5>
+            <h4>الدكتور / حسام مصطفي</h4>
+            <h5>
+              طبيب بشري ، حاصل على بكالوريوس الطب والجراحة، ودكتوراه في الطب
+            </h5>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <h5>المواعيد</h5>
+              <span>+578 </span>
+            </div>
+            <div class="card">
+              <h5>العمليات الجراحية</h5>
+              <span>+578 </span>
+            </div>
+            <div class="card">
+              <h5>زيارة الغرفة</h5>
+              <span>+578 </span>
+            </div>
+          </div>
+        </div>
+        <div class="left-side">
+          <img src="assets/images/doctors.svg" alt="flag" />
+        </div>
+      </div>
+      <div class="bottom-content">
+        <div class="card">
+          <div class="header">
+            <div class="right">
+              <h5>المواعيد</h5>
+              <span>ملخص اليوم</span>
+            </div>
+            <div class="icon">🕒</div>
+          </div>
+          <div class="content"><app-donut-chart></app-donut-chart></div>
+          <!-- <div class="footer">
+            <ul>
+              <li>مُجدول: <span>٢٨</span></li>
+              <li>مُنجز: <span>٢٤</span></li>
+              <li>مُلغى: <span>٤</span></li>
+            </ul>
+          </div> -->
+        </div>
+        <div class="card">
+          <div class="header">
+            <div class="right">
+              <h5>إيرادات اليوم</h5>
+              <span>4,250 دولارًا أمريكيًا </span>
+            </div>
+            <div class="icon">🕒</div>
+          </div>
+          <div class="content"><app-area-chart></app-area-chart></div>
+          <div class="footer">
+            <ul>
+            <li class="scheduled">الحضور المباشر: <span>1850 دولارًا أمريكيًا</span></li>
+              <li class="completed">المتابعات: <span>1200 دولارًا أمريكيًا</span></li>
+              <li class="canceled">عبر الإنترنت: <span>1200 دولارًا أمريكيًا</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="header">
+            <div class="right">
+              <h5>الأداء</h5>
+              <span>المؤشرات اليومية </span>
+            </div>
+            <div class="icon">🕒</div>
+          </div>
+          <div class="content"><app-bar-chart></app-bar-chart></div>
+          <div class="footer">
+            <ul>
+              <li class=""> متوسط ​​مدة الاستشارة: <span>18 دقيقة</span></li>
+              <li class="">عدد المرضى في اليوم: <span>24 مريض</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- left side  -->
+    <div class="col-3 about">
+      <div class="top-section">
+        <img src="assets/images/doctor.jpg" alt="flag" />
+        <h5 class="name">د/ حسام مصطفي</h5>
+        <span class="brif"> قسم جراحة العظام - مستشفى ريستار</span>
+      </div>
+      <div class="center-section">
+        <div class="details-points">
+          <h5>3,897 Patients</h5>
+          <span>8,000 Patients Limit</span>
+        </div>
+        <div class="details-chart">60%</div>
+      </div>
+      <div class="bottom-section">
+        <div class="card">
+          <h5>Surgery</h5>
+          <span>578 </span>
+        </div>
+        <div class="card">
+          <h5>Patients</h5>
+          <span>578 </span>
+        </div>
+        <div class="card">
+          <h5>Consultation</h5>
+          <span>578 </span>
+        </div>
+        <div class="card">
+          <h5>Appointment</h5>
+          <span>1,243 </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
