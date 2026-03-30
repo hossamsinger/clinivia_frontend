@@ -1,5 +1,8 @@
 <section class="doctor-dashboard">
-  <div class="row dashboard">
+  <!-- -------------------------------------- -->
+  <!-- ----------PART 1--------------------- -->
+  <!-- -------------------------------------- -->
+  <div class="row dashboard_p1">
     <!-- right Side -->
     <div class="col-9 content">
       <div class="top-content">
@@ -59,9 +62,15 @@
           <div class="content"><app-area-chart></app-area-chart></div>
           <div class="footer">
             <ul>
-            <li class="scheduled">الحضور المباشر: <span>1850 دولارًا أمريكيًا</span></li>
-              <li class="completed">المتابعات: <span>1200 دولارًا أمريكيًا</span></li>
-              <li class="canceled">عبر الإنترنت: <span>1200 دولارًا أمريكيًا</span></li>
+              <li class="scheduled">
+                الحضور المباشر: <span>1850 دولارًا أمريكيًا</span>
+              </li>
+              <li class="completed">
+                المتابعات: <span>1200 دولارًا أمريكيًا</span>
+              </li>
+              <li class="canceled">
+                عبر الإنترنت: <span>1200 دولارًا أمريكيًا</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -76,7 +85,7 @@
           <div class="content"><app-bar-chart></app-bar-chart></div>
           <div class="footer">
             <ul>
-              <li class=""> متوسط ​​مدة الاستشارة: <span>18 دقيقة</span></li>
+              <li class="">متوسط ​​مدة الاستشارة: <span>18 دقيقة</span></li>
               <li class="">عدد المرضى في اليوم: <span>24 مريض</span></li>
             </ul>
           </div>
@@ -117,5 +126,175 @@
         </div>
       </div>
     </div>
+  </div>
+  <!-- -------------------------------------- -->
+  <!-- ----------PART 2--------------------- -->
+  <!-- -------------------------------------- -->
+  <div class="row dashboard_p2">
+    <div class="col-9">
+      <div class="card">
+        <div class="header">
+          <h5>مسح المرضى</h5>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+        <div class="content"><app-area-chart></app-area-chart></div>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+  <!-- -------------------------------------- -->
+  <!-- ----------PART 3--------------------- -->
+  <!-- -------------------------------------- -->
+  <div class="row dashboard_p2">
+    <div class="col-9">
+      <div class="row">
+        <div class="col-6">
+          <div class="card">
+            <div class="header">
+              <h5>ساعات العمل</h5>
+              <span class="all">الكل</span>
+            </div>
+            <div class="content">
+              <div class="task-hours">
+                <div class="progress-container">
+                  <div class="progress_header">
+                    <p><span>3456</span> ساعه</p>
+                    <p><span>10000</span> المتوقع</p>
+                  </div>
+
+                  <div class="progress_contet">
+                    <div class="bar red" style="width: 33%"></div>
+                    <div class="bar blue" style="width: 25%"></div>
+                    <div class="bar black" style="width: 12%"></div>
+                    <div class="bar purple" style="width: 10%"></div>
+                    <div class="bar green" style="width: 7%"></div>
+                    <div class="bar cyan" style="width: 13%"></div>
+                  </div>
+                </div>
+
+                <div class="list-container">
+                  <div class="list-header">
+                    <span>اسم المهمه</span>
+                    <span>النسبه</span>
+                  </div>
+                  <ul class="list">
+                    <li>
+                      <p><span class="dot red"></span> تشخيص المريض</p>
+                      <span>33%</span>
+                    </li>
+                    <li>
+                      <p><span class="dot blue"></span> الإجراء الجراحي</p>
+                      <span>25%</span>
+                    </li>
+                    <li>
+                      <p>
+                        <span class="dot black"></span> إدارة الوصفات الطبية
+                      </p>
+                      <span>12%</span>
+                    </li>
+                    <li>
+                      <p><span class="dot purple"></span> متابعة المريض</p>
+                      <span>10%</span>
+                    </li>
+                    <li>
+                      <p><span class="dot green"></span> البحث الطبي</p>
+                      <span>7%</span>
+                    </li>
+                    <li>
+                      <p><span class="dot cyan"></span> جدولة الاستشارات</p>
+                      <span>13%</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card">
+            <div class="header">
+              <h5>المواعيد</h5>
+              <span class="all">الكل</span>
+            </div>
+            <div class="content">
+              <div class="card-container">
+                <div class="item" *ngFor="let app of appointments">
+                  <img [src]="app.image" alt="flag" />
+
+                  <div class="info">
+                    <h6>{{ app.name }}</h6>
+                    <span>{{ app.case }}</span>
+                  </div>
+                  <div class="time">
+                    <strong>{{ app.date }}</strong>
+                    <span>{{ app.time }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+  <!-- -------------------------------------- -->
+  <!-- ----------PART 4--------------------- -->
+  <!-- -------------------------------------- -->
+  <div class="row dashboard_p2">
+    <div class="col-9">
+      <div class="card">
+        <div class="header">
+          <h5>جدول المواعيد</h5>
+          <span class="all">الكل</span>
+        </div>
+        <div class="content"><app-area-chart></app-area-chart></div>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+  <!-- -------------------------------------- -->
+  <!-- ----------PART 5--------------------- -->
+  <!-- -------------------------------------- -->
+
+  <div class="row dashboard_p2">
+    <div class="col-9">
+      <div class="row">
+        <div class="col-6">
+          <div class="card">
+            <div class="header">
+              <h5>قائمة المهام</h5>
+              <span class="all">الكل</span>
+            </div>
+            <div class="content"><app-area-chart></app-area-chart></div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card">
+            <div class="header">
+              <h5>حالة الاطباء</h5>
+              <span class="all">الكل</span>
+            </div>
+            <div class="content"><app-area-chart></app-area-chart></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+  <!-- -------------------------------------- -->
+  <!-- ----------PART 4--------------------- -->
+  <!-- -------------------------------------- -->
+  <div class="row dashboard_p2">
+    <div class="col-9">
+      <div class="card">
+        <div class="header">
+          <h5>العمليات الجراحية والإجراءات القادمة</h5>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+        <div class="content"><app-area-chart></app-area-chart></div>
+      </div>
+    </div>
+    <div class="col-3"></div>
   </div>
 </section>
