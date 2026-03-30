@@ -70,4 +70,63 @@ export class DoctorDashboardComponent {
       image: 'assets/images/user8.jpg'
     }
   ];
+  appointments2 = [
+    {
+      image: 'assets/images/user9.jpg',
+      name: 'Sarah Smith',
+      gender: 'Female',
+      date: '12/05/2016',
+      diagnosis: 'Cholera',
+      report: 'assets/reports/sarah.pdf'
+    },
+    {
+      image: 'assets/images/user10.jpg',
+      name: 'Airi Satou',
+      gender: 'Male',
+      date: '12/05/2016',
+      diagnosis: 'Jaundice',
+      report: 'assets/reports/airi.pdf'
+    },
+    {
+      image: 'assets/images/user11.jpg',
+      name: 'Sarah Smith',
+      gender: 'Female',
+      date: '12/05/2016',
+      diagnosis: 'Cholera',
+      report: 'assets/reports/sarah.pdf'
+    },
+    {
+      image: 'assets/images/user12.jpg',
+      name: 'Airi Satou',
+      gender: 'Male',
+      date: '12/05/2016',
+      diagnosis: 'Jaundice',
+      report: 'assets/reports/airi.pdf'
+    },
+    {
+      image: 'assets/images/user13.jpg',
+      name: 'Sarah Smith',
+      gender: 'Female',
+      date: '12/05/2016',
+      diagnosis: 'Cholera',
+      report: 'assets/reports/sarah.pdf'
+    },
+    {
+      image: 'assets/images/user12.jpg',
+      name: 'Airi Satou',
+      gender: 'Male',
+      date: '12/05/2016',
+      diagnosis: 'Jaundice',
+      report: 'assets/reports/airi.pdf'
+    },
+    {
+      image: 'assets/images/user13.jpg',
+      name: 'Airi Satou',
+      gender: 'Male',
+      date: '12/05/2016',
+      diagnosis: 'Jaundice',
+      report: 'assets/reports/airi.pdf'
+    },
+    // ... باقي المواعيد
+  ];
 }

@@ -2,22 +2,49 @@
   background: #f5f7fb;
   padding: 20px;
 
+  /* ================= BASE SYSTEM ================= */
+
+  %base-card {
+    background: #fff;
+    border-radius: 12px;
+    border: none;
+    box-shadow:
+      0 2px 6px rgba(0, 0, 0, 0.08),
+      0 8px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  %card-header {
+    padding: 10px;
+    border-bottom: 1px solid #77777733;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h5 {
+      font-size: 16px;
+    }
+  }
+
+  %card-body-scroll {
+    padding: 10px;
+    overflow-y: auto;
+  }
+
   /*=====================================================*/
-  /*=================== PART : 1 ===========================*/
-  /*=======================================================*/
+  /*=================== PART : 1 =========================*/
+  /*=====================================================*/
+
   .dashboard_p1 {
     display: flex;
     gap: 10px;
   }
 
-  /* ================= RIGHT (MAIN CONTENT) ================= */
   .content {
     .top-content {
       display: flex;
-      background: #ffffff;
-      justify-content: space-between;
-      border-radius: 15px;
+      @extend %base-card;
       padding: 20px;
+      justify-content: space-between;
       align-items: center;
 
       .right-side {
@@ -43,11 +70,10 @@
           margin-top: 15px;
 
           .card {
-            border-radius: 12px;
+            @extend %base-card;
             padding: 15px 20px;
             min-width: 150px;
             background: #dfdcf6;
-            border: none;
 
             h5 {
               font-size: 14px;
@@ -81,7 +107,7 @@
       }
     }
 
-    /* bottom cards */
+    /* ===== Bottom Cards ===== */
     .bottom-content {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -89,96 +115,86 @@
       margin-top: 20px;
 
       .card {
-        background: #fff;
-        border-radius: 15px;
+        @extend %base-card;
         padding: 20px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         display: flex;
         flex-direction: column;
         height: 100%;
-        border: none;
       }
-      .card {
-        .header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
 
-          .right {
-            h5 {
-              margin: 0;
-              font-size: 14px;
-            }
+      .header {
+        @extend %card-header;
 
-            span {
-              color: #2a7de1;
-              font-weight: bold;
-            }
-          }
-        }
-
-        .content {
-          flex: 1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-        }
-
-        .footer {
-          margin-top: auto;
-
-          ul {
-            list-style: none;
-            padding: 0;
+        .right {
+          h5 {
             margin: 0;
-
-            // display: flex;
-            // justify-content: space-between;
+            font-size: 14px;
           }
 
-          li {
-            font-size: 13px;
-            color: #777;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            &::before {
-              content: "";
-              width: 8px;
-              height: 8px;
-              border-radius: 50%;
-              display: inline-block;
-            }
+          span {
+            color: #2a7de1;
+            font-weight: bold;
+          }
+        }
+      }
 
-            &.scheduled::before {
-              background: #3498db;
-            }
+      .content {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
 
-            &.completed::before {
-              background: #2ecc71;
-            }
+      .footer {
+        margin-top: auto;
 
-            &.canceled::before {
-              background: #e74c3c;
-            }
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
 
-            span {
-              font-weight: bold;
-            }
+        li {
+          font-size: 13px;
+          color: #777;
+          display: flex;
+          align-items: center;
+          gap: 6px;
 
-            /* optional: ألوان زي الصورة */
-            &:nth-child(1) span {
-              color: #3498db; /* scheduled */
-            }
+          &::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+          }
 
-            &:nth-child(2) span {
-              color: #2ecc71; /* completed */
-            }
+          &.scheduled::before {
+            background: #3498db;
+          }
 
-            &:nth-child(3) span {
-              color: #e74c3c; /* canceled */
-            }
+          &.completed::before {
+            background: #2ecc71;
+          }
+
+          &.canceled::before {
+            background: #e74c3c;
+          }
+
+          span {
+            font-weight: bold;
+          }
+
+          &:nth-child(1) span {
+            color: #3498db;
+          }
+
+          &:nth-child(2) span {
+            color: #2ecc71;
+          }
+
+          &:nth-child(3) span {
+            color: #e74c3c;
           }
         }
       }
@@ -186,12 +202,12 @@
   }
 
   /* ================= LEFT SIDE ================= */
+
   .about {
     flex: 1;
 
     .top-section {
-      background: #fff;
-      border-radius: 15px;
+      @extend %base-card;
       padding: 20px;
       text-align: center;
 
@@ -216,36 +232,11 @@
 
     .center-section {
       margin-top: 15px;
-      background: #fff;
-      border-radius: 15px;
+      @extend %base-card;
       padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-
-      .details-points {
-        h5 {
-          margin: 0;
-        }
-
-        span {
-          font-size: 13px;
-          color: #777;
-        }
-      }
-
-      .details-chart {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        border: 6px solid #eee;
-        border-top: 6px solid #ff6b6b;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        color: #ff6b6b;
-      }
     }
 
     .bottom-section {
@@ -255,11 +246,9 @@
       gap: 10px;
 
       .card {
-        background: #fff;
-        border-radius: 12px;
+        @extend %base-card;
         padding: 15px;
         text-align: center;
-        border: none;
 
         h5 {
           font-size: 14px;
@@ -275,181 +264,324 @@
   }
 
   /*=====================================================*/
-  /*=================== PART : 2 ===========================*/
-  /*=======================================================*/
+  /*=================== PART : 2 =========================*/
+  /*=====================================================*/
 
   .dashboard_p2 {
     margin-top: 10px;
-     .col-6 {
-          .card{
-            .content{
-              height: 410px;
-              overflow-y: scroll;
-            }
+
+    .patient-survay-card {
+      @extend %base-card;
+      padding: 15px;
+      text-align: center;
+      transition: 0.3s;
+
+      .patient-survay-header {
+        @extend %card-header;
+      }
+
+      .patient-survay-content {
+        padding: 10px;
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  /*=====================================================*/
+  /*=================== PART : 3 =========================*/
+  /*=====================================================*/
+
+  .dashboard_p3 {
+    margin-top: 10px;
+
+    .p3-card {
+      @extend %base-card;
+      transition: 0.3s;
+
+      .p3-card-header {
+        @extend %card-header;
+      }
+
+      .p3-card-body {
+        @extend %card-body-scroll;
+        height: 380px;
+      }
+    }
+
+    /* Task Card */
+    .task-card {
+      .task-progress {
+        margin: 10px 0 30px;
+
+        .task-progress-header {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .task-progress-bars {
+          display: flex;
+          height: 10px;
+          border-radius: 5px;
+          overflow: hidden;
+          margin-top: 10px;
+
+          .bar {
+            height: 100%;
           }
-        }
-    .card {
-      border: none;
-      // min-height: 400px;
-      .header {
-        padding: 10px 10px 0px 10px;
-        border-bottom: 1px solid #77777733;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        h5 {
-          font-size: 16px;
-        }
-        i {
-          cursor: pointer;
-        }
-        span.all {
-          font-size: 14px;
-          color: #2a7de1;
-          cursor: pointer;
-          font-weight: bold;
+
+          .red {
+            background: #e74c3c;
+          }
+          .blue {
+            background: #3498db;
+          }
+          .black {
+            background: #2c3e50;
+          }
+          .purple {
+            background: #8e44ad;
+          }
+          .green {
+            background: #2ecc71;
+          }
+          .cyan {
+            background: #1abc9c;
+          }
         }
       }
-      .content {
-        padding: 10px ;
-        // ----- Task Hours --------
-        .task-hours {
-          padding-top: 10px;
-          .progress-container {
-            margin: 10px 0px 30px;
-            .progress_header {
-              display: flex;
-              justify-content: space-between;
-              p {
-                margin-bottom: 2px;
-              }
-            }
 
-            .progress_contet {
-              display: flex;
-              height: 10px;
-              border-radius: 5px;
-              overflow: hidden;
-              margin-bottom: 15px;
-
-              .bar {
-                height: 100%;
-              }
-              .red {
-                background: #e74c3c;
-              }
-              .blue {
-                background: #3498db;
-              }
-              .black {
-                background: #2c3e50;
-              }
-              .purple {
-                background: #8e44ad;
-              }
-              .green {
-                background: #2ecc71;
-              }
-              .cyan {
-                background: #1abc9c;
-              }
-            }
-          }
-
-          .list-container {
-            .list-header {
-              display: flex;
-              justify-content: space-between;
-              font-weight: bold;
-              padding: 8px 10px;
-              border-bottom: 1px solid #eee;
-              color: #555;
-              background-color: #f1f5ff;
-              margin-bottom: 10px;
-              span {
-                font-size: 15px;
-              }
-            }
-            .list {
-              list-style: none;
-              padding: 0;
-
-              li {
-                display: flex;
-                justify-content: space-between;
-                font-size: 13px;
-                margin-bottom: 5px;
-                padding: 0px 10px;
-
-                .dot {
-                  width: 8px;
-                  height: 8px;
-                  border-radius: 50%;
-                  display: inline-block;
-                  margin-right: 8px;
-                  margin-left: 8px;
-                }
-
-                .red {
-                  background: #e74c3c;
-                }
-                .blue {
-                  background: #3498db;
-                }
-                .black {
-                  background: #2c3e50;
-                }
-                .purple {
-                  background: #8e44ad;
-                }
-                .green {
-                  background: #2ecc71;
-                }
-                .cyan {
-                  background: #1abc9c;
-                }
-              }
-            }
-          }
-        }
-        // ----- Appointments --------
-        .item {
+      .task-list {
+        .task-list-header {
           display: flex;
-          align-items: center;
-          background: #f3f4f8;
-          padding: 10px;
-          border-radius: 10px;
+          justify-content: space-between;
+          background: #f1f5ff;
+          padding: 8px 10px;
+          border-bottom: 1px solid #eee;
           margin-bottom: 10px;
+        }
 
-          img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-          }
+        .task-list-items {
+          list-style: none;
+          padding: 0;
 
-          .info {
-            flex: 1;
-
-            h6 {
-              margin: 0;
-              font-size: 14px;
-            }
-
-            span {
-              font-size: 12px;
-              color: #777;
-            }
-          }
-
-          .time {
+          .task-item {
             display: flex;
-            flex-direction: column ;
-            text-align: right;
+            justify-content: space-between;
+            padding: 0 10px;
+            margin-bottom: 5px;
+            font-size: 13px;
+
+            .dot {
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              margin: 0 8px;
+            }
+
+            .red {
+              background: #e74c3c;
+            }
+            .blue {
+              background: #3498db;
+            }
+            .black {
+              background: #2c3e50;
+            }
+            .purple {
+              background: #8e44ad;
+            }
+            .green {
+              background: #2ecc71;
+            }
+            .cyan {
+              background: #1abc9c;
+            }
+          }
+        }
+      }
+    }
+
+    /* Appointments */
+    .appointments-card {
+      .appointments-list {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .appointment-item {
+        display: flex;
+        align-items: center;
+        background: #f3f4f8;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+
+        .appointment-info {
+          flex: 1;
+
+          h6 {
+            margin: 0;
+            font-size: 14px;
+          }
+
+          span {
             font-size: 12px;
+            color: #777;
           }
         }
 
+        .appointment-time {
+          display: flex;
+          flex-direction: column;
+          text-align: right;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  /*=====================================================*/
+  /*=================== PART : 4 =========================*/
+  /*=====================================================*/
+  .dashboard_p4 {
+    margin-top: 10px;
+    .p4-card {
+      @extend %base-card;
+    }
+
+    .p4-card-header {
+      @extend %card-header;
+
+      .all {
+        font-size: 14px;
+        color: #2a7de1;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+
+    .p4-card-body {
+      padding: 10px;
+      overflow-x: auto;
+
+      .appointments-table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th,
+        td {
+          padding: 10px;
+          text-align: right;
+          border-bottom: 1px solid #eee;
+        }
+
+        th {
+          font-weight: bold;
+          font-size: 14px;
+        }
+
+        td .profile-img {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-right: 8px;
+          vertical-align: middle;
+        }
+
+        .diagnosis {
+          display: inline-block;
+          padding: 2px 8px;
+          border-radius: 12px;
+          font-size: 12px;
+          font-weight: bold;
+          text-transform: capitalize;
+        }
+
+        .diagnosis.cholera {
+          background: #2ecc71;
+          color: #fff;
+        }
+        .diagnosis.jaundice {
+          background: #8e44ad;
+          color: #fff;
+        }
+        .diagnosis.typhoid {
+          background: #8e44ad;
+          color: #fff;
+        }
+        .diagnosis.malaria {
+          background: #e67e22;
+          color: #fff;
+        }
+        .diagnosis.infection {
+          background: #1abc9c;
+          color: #fff;
+        }
+        .diagnosis.flu {
+          background: #3498db;
+          color: #fff;
+        }
+        .diagnosis.pneumonia {
+          background: #e74c3c;
+          color: #fff;
+        }
+
+        .details-link {
+          color: #2a7de1;
+          font-weight: bold;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        .details-link:hover {
+          text-decoration: underline;
+        }
+        .action-icons {
+          display: flex;
+          gap: 10px;
+          justify-content: center;
+
+          i {
+            cursor: pointer;
+            font-size: 14px;
+            padding: 10px;
+            border-radius: 4px;
+            transition: 0.2s;
+          }
+
+          i.edit {
+            color: #3498db;
+            &:hover {
+              background: #3498db22;
+            }
+          }
+
+          i.delete {
+            color: #e74c3c;
+            &:hover {
+              background: #e74c3c22;
+            }
+          }
+
+          i.view {
+            color: #2a7de1;
+            &:hover {
+              background: #2a7de122;
+            }
+          }
+        }
       }
     }
   }

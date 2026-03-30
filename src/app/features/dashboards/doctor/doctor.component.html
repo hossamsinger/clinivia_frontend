@@ -132,12 +132,12 @@
   <!-- -------------------------------------- -->
   <div class="row dashboard_p2">
     <div class="col-9">
-      <div class="card">
-        <div class="header">
+      <div class="patient-survay-card">
+        <div class="patient-survay-header">
           <h5>مسح المرضى</h5>
           <i class="fa-solid fa-ellipsis-vertical"></i>
         </div>
-        <div class="content"><app-area-chart></app-area-chart></div>
+        <div class="patient-survay-content"><app-area-chart></app-area-chart></div>
       </div>
     </div>
     <div class="col-3"></div>
@@ -145,114 +145,177 @@
   <!-- -------------------------------------- -->
   <!-- ----------PART 3--------------------- -->
   <!-- -------------------------------------- -->
-  <div class="row dashboard_p2">
-    <div class="col-9">
-      <div class="row">
-        <div class="col-6">
-          <div class="card">
-            <div class="header">
-              <h5>ساعات العمل</h5>
-              <span class="all">الكل</span>
-            </div>
-            <div class="content">
-              <div class="task-hours">
-                <div class="progress-container">
-                  <div class="progress_header">
-                    <p><span>3456</span> ساعه</p>
-                    <p><span>10000</span> المتوقع</p>
-                  </div>
+  
+  <div class="row dashboard_p3">
+  <div class="col-9">
+    <div class="row">
 
-                  <div class="progress_contet">
-                    <div class="bar red" style="width: 33%"></div>
-                    <div class="bar blue" style="width: 25%"></div>
-                    <div class="bar black" style="width: 12%"></div>
-                    <div class="bar purple" style="width: 10%"></div>
-                    <div class="bar green" style="width: 7%"></div>
-                    <div class="bar cyan" style="width: 13%"></div>
-                  </div>
-                </div>
-
-                <div class="list-container">
-                  <div class="list-header">
-                    <span>اسم المهمه</span>
-                    <span>النسبه</span>
-                  </div>
-                  <ul class="list">
-                    <li>
-                      <p><span class="dot red"></span> تشخيص المريض</p>
-                      <span>33%</span>
-                    </li>
-                    <li>
-                      <p><span class="dot blue"></span> الإجراء الجراحي</p>
-                      <span>25%</span>
-                    </li>
-                    <li>
-                      <p>
-                        <span class="dot black"></span> إدارة الوصفات الطبية
-                      </p>
-                      <span>12%</span>
-                    </li>
-                    <li>
-                      <p><span class="dot purple"></span> متابعة المريض</p>
-                      <span>10%</span>
-                    </li>
-                    <li>
-                      <p><span class="dot green"></span> البحث الطبي</p>
-                      <span>7%</span>
-                    </li>
-                    <li>
-                      <p><span class="dot cyan"></span> جدولة الاستشارات</p>
-                      <span>13%</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+      <!-- ===== Task Hours Card ===== -->
+      <div class="col-6">
+        <div class="p3-card task-card">
+          <div class="header p3-card-header">
+            <h5>ساعات العمل</h5>
+            <span class="all">الكل</span>
           </div>
-        </div>
-        <div class="col-6">
-          <div class="card">
-            <div class="header">
-              <h5>المواعيد</h5>
-              <span class="all">الكل</span>
-            </div>
-            <div class="content">
-              <div class="card-container">
-                <div class="item" *ngFor="let app of appointments">
-                  <img [src]="app.image" alt="flag" />
 
-                  <div class="info">
-                    <h6>{{ app.name }}</h6>
-                    <span>{{ app.case }}</span>
-                  </div>
-                  <div class="time">
-                    <strong>{{ app.date }}</strong>
-                    <span>{{ app.time }}</span>
-                  </div>
+          <div class="content p3-card-body">
+
+            <div class="task-hours">
+
+              <!-- progress -->
+              <div class="task-progress">
+                <div class="task-progress-header">
+                  <p><span>3456</span> ساعه</p>
+                  <p><span>10000</span> المتوقع</p>
+                </div>
+
+                <div class="task-progress-bars">
+                  <div class="bar red" style="width: 33%"></div>
+                  <div class="bar blue" style="width: 25%"></div>
+                  <div class="bar black" style="width: 12%"></div>
+                  <div class="bar purple" style="width: 10%"></div>
+                  <div class="bar green" style="width: 7%"></div>
+                  <div class="bar cyan" style="width: 13%"></div>
                 </div>
               </div>
+
+              <!-- list -->
+              <div class="task-list">
+                <div class="task-list-header">
+                  <span>اسم المهمه</span>
+                  <span>النسبه</span>
+                </div>
+
+                <ul class="task-list-items">
+                  <li class="task-item">
+                    <p><span class="dot red"></span> تشخيص المريض</p>
+                    <span>33%</span>
+                  </li>
+
+                  <li class="task-item">
+                    <p><span class="dot blue"></span> الإجراء الجراحي</p>
+                    <span>25%</span>
+                  </li>
+
+                  <li class="task-item">
+                    <p><span class="dot black"></span> إدارة الوصفات الطبية</p>
+                    <span>12%</span>
+                  </li>
+
+                  <li class="task-item">
+                    <p><span class="dot purple"></span> متابعة المريض</p>
+                    <span>10%</span>
+                  </li>
+
+                  <li class="task-item">
+                    <p><span class="dot green"></span> البحث الطبي</p>
+                    <span>7%</span>
+                  </li>
+
+                  <li class="task-item">
+                    <p><span class="dot cyan"></span> جدولة الاستشارات</p>
+                    <span>13%</span>
+                  </li>
+                </ul>
+              </div>
+
             </div>
+
           </div>
         </div>
       </div>
+
+      <!-- ===== Appointments Card ===== -->
+      <div class="col-6">
+        <div class=" p3-card appointments-card">
+
+          <div class="header p3-card-header">
+            <h5>المواعيد</h5>
+            <span class="all">الكل</span>
+          </div>
+
+          <div class="content p3-card-body">
+
+            <div class="appointments-list">
+              <div class="appointment-item" *ngFor="let app of appointments">
+
+                <img [src]="app.image" />
+
+                <div class="appointment-info">
+                  <h6>{{ app.name }}</h6>
+                  <span>{{ app.case }}</span>
+                </div>
+
+                <div class="appointment-time">
+                  <strong>{{ app.date }}</strong>
+                  <span>{{ app.time }}</span>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="col-3"></div>
   </div>
+
+  <div class="col-3"></div>
+</div>
   <!-- -------------------------------------- -->
   <!-- ----------PART 4--------------------- -->
   <!-- -------------------------------------- -->
-  <div class="row dashboard_p2">
+<div class="dashboard_p4">
+  <div class="row">
     <div class="col-9">
-      <div class="card">
-        <div class="header">
+      <div class="card p4-card">
+        <div class="header p4-card-header">
           <h5>جدول المواعيد</h5>
           <span class="all">الكل</span>
         </div>
-        <div class="content"><app-area-chart></app-area-chart></div>
+        <div class="content p4-card-body">
+          <table class="appointments-table">
+            <thead>
+              <tr>
+                <th>المريض</th>
+                <th>النوع</th>
+                <th>التاريخ</th>
+                <th>الوصف</th>
+                <th>التقرير</th>
+                <th>الاحداث</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let app of appointments2">
+                <td>
+                  <img [src]="app.image" alt="profile" class="profile-img"/>
+                  {{ app.name }}
+                </td>
+                <td>{{ app.gender }}</td>
+                <td>{{ app.date }}</td>
+                <td>
+                  <span class="diagnosis {{ app.diagnosis | lowercase }}">{{ app.diagnosis }}</span>
+                </td>
+                <td>
+                  <a href="{{ app.report }}" target="_blank">
+                    PDF
+                  </a>
+                </td>
+                 <td class="action-icons">
+                  <i class="fa fa-pencil edit" title="Edit" ></i>
+                  <i class="fa fa-trash delete" title="Delete" ></i>
+                  <i class="fa fa-eye view" title="View Details" ></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
     <div class="col-3"></div>
   </div>
+</div>
   <!-- -------------------------------------- -->
   <!-- ----------PART 5--------------------- -->
   <!-- -------------------------------------- -->
