@@ -1,0 +1,73 @@
+.calendar-card {
+  background: #fff;
+  border-radius: 12px;
+  border: none;
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.08),
+    0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  padding: 10px;
+
+  .fc {
+    font-size: 12px;
+  }
+
+  .fc-toolbar-title {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .fc-button {
+    background: transparent;
+    border: none;
+    color: #333;
+  }
+
+  .fc-daygrid-day {
+    padding: 4px;
+  }
+
+  /* نخلي الـ event نقطة */
+  .fc-daygrid-event {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin: auto;
+  }
+
+  .fc-event-title {
+    display: none;
+  }
+
+  /* legend */
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 12px;
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+
+      &.blue {
+        background: #3b82f6;
+      }
+      &.red {
+        background: #ef4444;
+      }
+      &.green {
+        background: #10b981;
+      }
+    }
+  }
+}

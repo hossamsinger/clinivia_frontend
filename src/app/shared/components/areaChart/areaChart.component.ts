@@ -9,6 +9,7 @@ import {
   ApexAxisChartSeries,
   ApexPlotOptions,
   ApexXAxis,
+  ApexGrid,
 } from 'ng-apexcharts';
 
 export type ChartOptions = {
@@ -19,6 +20,7 @@ export type ChartOptions = {
   fill: ApexFill;
   plotOptions: ApexPlotOptions;
   xaxis: ApexXAxis;
+  grid: ApexGrid;
 };
 
 @Component({
@@ -41,12 +43,16 @@ export class AreaChartComponent {
           data: [30, 40, 35, 50, 45, 60, 55, 70, 60, 65],
         },
       ],
+      grid: {
+        show: true,
+      },
       chart: {
-        type: 'area', 
+        type: 'area',
         height: 170,
         sparkline: {
-          enabled: true, 
+          enabled: true,
         },
+        fontFamily: 'Cairo, sans-serif',
       },
 
       plotOptions: {
@@ -61,7 +67,7 @@ export class AreaChartComponent {
       },
 
       fill: {
-        colors: ['#7B3FF2'], // solid color instead of gradient
+        colors: ['#4d07db'], // solid color instead of gradient
       },
 
       tooltip: {
