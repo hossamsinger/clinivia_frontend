@@ -102,11 +102,21 @@
           استشاري ومدير قسم جراحة العظام والمفاصل الصناعيه و اصابات الملاعب
           بمستشفى قِمّة كير التخصصي
         </span>
+        <div class="stars">
+          <div class="star-icons">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
       </div>
       <div class="center-section">
         <div class="details-points">
-          <h5>المرضي:3,897</h5>
-          <span>الحد الاقصي: 8,000 </span>
+          <h5> المرضي الحاليين : 37</h5>
+          <h5>الحد الاقصي : 8 </h5>
+          <h5>  الرقم الحالي : 7</h5>
         </div>
         <div class="progress-circle"><span>60%</span></div>
       </div>
@@ -386,9 +396,9 @@
                   <p>{{ todo.title }}</p>
                   <span
                     [ngClass]="{
-                      red: todo.priority === 'High',
-                      green: todo.priority === 'Low',
-                      gray: todo.priority === 'Normal',
+                      red: todo.priority === 'عالي',
+                      green: todo.priority === 'منخفض',
+                      gray: todo.priority === 'متوسط',
                     }"
                   >
                     {{ todo.priority }}
@@ -426,8 +436,8 @@
                     <td>
                       <span
                         [ngClass]="{
-                          available: doctor.status === 'Available',
-                          absent: doctor.status === 'Absent',
+                          available: doctor.status === 'متاح',
+                          absent: doctor.status === 'غائب',
                         }"
                       >
                         {{ doctor.status }}
@@ -505,6 +515,31 @@
         </div>
       </div>
     </div>
-    <div class="col-4"></div>
+    <div class="col-4">
+      <div class="p6-card barchart-card">
+        <!-- header -->
+        <div class="p6-card-header">
+          <h5>ملاحظات المريض</h5>
+        </div>
+
+        <!-- content -->
+        <div class="stars">
+          <h2 class="rate">4.8</h2>
+
+          <div class="star-icons">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+
+          <span class="label">اجمالي التقييم</span>
+        </div>
+        <div class="p6-card-body bar-chart">
+          <app-donut-chart></app-donut-chart>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

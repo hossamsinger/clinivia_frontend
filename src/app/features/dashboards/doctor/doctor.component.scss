@@ -52,7 +52,14 @@
 
   .dashboard_p1 {
     display: flex;
-    gap: 10px;
+    // gap: 10px;
+    align-items: stretch;
+    .content,
+    .about {
+      display: flex;
+      flex-direction: column;
+    }
+
     /*=====================================================*/
     /* ================= RIGHT SIDE ================= */
     /*=====================================================*/
@@ -222,7 +229,9 @@
     /*=====================================================*/
 
     .about {
-      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       height: 100%;
       .top-section {
         @extend %base-card;
@@ -246,6 +255,36 @@
           font-size: 13px;
           color: #777;
         }
+        .stars {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-top: 10px;
+
+          .rate {
+            font-size: 40px;
+            font-weight: bold;
+            color: #4caf50; // أخضر زي الصورة
+            margin: 5px 0;
+          }
+
+          .star-icons {
+            display: flex;
+            gap: 5px;
+            margin: 5px 0;
+
+            i {
+              color: #f4b400; // لون النجوم
+              font-size: 18px;
+            }
+          }
+
+          .label {
+            font-size: 13px;
+            color: #777;
+          }
+        }
       }
 
       .center-section {
@@ -258,7 +297,7 @@
 
         .details-points {
           h5 {
-            margin: 0;
+            margin: 4px;
             font-size: 14px;
             font-weight: bold;
             color: #777;
@@ -303,7 +342,7 @@
       }
 
       .bottom-section {
-        margin-top: 15px;
+        margin-top:15px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
@@ -1000,6 +1039,43 @@
         font-weight: bold;
         cursor: pointer;
       }
+    }
+    .stars {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+
+      .rate {
+        font-size: 40px;
+        font-weight: bold;
+        color: #4caf50; // أخضر زي الصورة
+        margin: 5px 0;
+      }
+
+      .star-icons {
+        display: flex;
+        gap: 5px;
+        margin: 5px 0;
+
+        i {
+          color: #f4b400; // لون النجوم
+          font-size: 18px;
+        }
+      }
+
+      .label {
+        font-size: 13px;
+        color: #777;
+      }
+    }
+
+    .bar-chart {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
     }
 
     .p6-card-body {
