@@ -1,0 +1,16 @@
+<div class="row secound-content">
+  <div class="col-3" *ngFor="let card of cards">
+    <div class="pb-card">
+      <div class="content">
+        <div class="details">
+          <h5>{{ card.title }}</h5>
+          <span>{{ card.value }}</span>
+        </div>
+        <div class="image-logo">
+          <img [src]="card.img" alt="" />
+        </div>
+      </div>
+      <div class="trend">{{ card.trend }}</div>
+    </div>
+  </div>
+</div>

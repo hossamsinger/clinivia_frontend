@@ -1,10 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { PatientHeaderComponent } from './components/patient-header/patient-header.component';
+import { PatientStatusComponent } from './components/patient-status/patient-status.component';
+import { LineChartComponent } from '../../../shared/components/lineChart/linechart.component';
 
 @Component({
   selector: 'app-patient',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    PatientHeaderComponent,
+    PatientStatusComponent,
+    LineChartComponent,
+  ],
   templateUrl: './patient.component.html',
   styleUrl: './patient.component.scss',
 })
@@ -30,34 +38,4 @@ export class PatientDashboardComponent implements OnInit {
       }, 2000);
     }
   }
-  
-  cards = [
-    {
-      title: 'ضغط الدم',
-      value: '١١٠/٧٠',
-      img: 'assets/images/blood-pressure.png',
-      trend: ' ١٠٪ أعلى من الشهر الماضي',
-    },
-    {
-      title: 'معدل ضربات القلب',
-      value: '٦٥٠',
-      img: 'assets/images/heart-rate.png',
-      trend: ' ٧٪ أقل من الشهر الماضي',
-    },
-    {
-      title: 'مستوى السكر',
-      value: '٨٨ - ٧٥',
-      img: 'assets/images/glucose.png',
-      trend: ' ١٢٪ أعلى من الشهر الماضي',
-    },
-    {
-      title: 'عدد خلايا الدم',
-      value: '٩٬٤٥٦/مل',
-      img: 'assets/images/blood-count.png',
-      trend: ' ٢٢٪ أقل من الشهر الماضي',
-    },
-  ];
-
-
-  
 }

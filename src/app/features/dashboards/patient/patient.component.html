@@ -3,42 +3,8 @@
   <!-- ----------PART 1--------------------- -->
   <!-- -------------------------------------- -->
   <section class="Advetisement_section">
-    <div class="row">
-      <div class="col-12">
-        <div class="first-content">
-          <div class="right-side">
-            <h5>أهلاً بعودتك</h5>
-            <h4>حسام مصطفي</h4>
-            <h5>
-              يسرّنا أن نرحّب بكم في مستشفى قِمّة كير التخصصي , ونشكركم على
-              اختياركم أطباءنا لرعاية صحتكم . كما نتطلع إلى تقديم رعاية صحية
-              شاملة ومخصصة لكم وتوفير كل سبل الراحه والطمأنينه لكل المرضي من
-              خلال اختيار فريق طبي متميز وتوفير كل الاجهزة التي تؤكد هذا
-              الاختيار.
-            </h5>
-          </div>
-          <div class="left-side">
-            <img src="assets/images/patientwelcome.png" alt="flag" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row secound-content">
-      <div class="col-3" *ngFor="let card of cards">
-        <div class="pb-card">
-          <div class="content">
-            <div class="details">
-              <h5>{{ card.title }}</h5>
-              <span>{{ card.value }}</span>
-            </div>
-            <div class="image-logo">
-              <img [src]="card.img" alt="" />
-            </div>
-          </div>
-          <div class="trend">{{ card.trend }}</div>
-        </div>
-      </div>
-    </div>
+    <app-patient-header></app-patient-header>
+    <app-patient-status></app-patient-status>
   </section>
 
   <!-- -------------------------------------- -->
@@ -46,6 +12,61 @@
   <!-- -------------------------------------- -->
 
   <section class="Rates_section">
-    
+    <div class="row custom-row">
+      <div class="col-4 card">
+        <div class="Rates-card-header">
+          <h5>قائمة المهام</h5>
+          <span class="all">الكل</span>
+        </div>
+        <div class="card-content">
+          <app-line-chart></app-line-chart>
+        </div>
+      </div>
+      <div class="col-4 card">
+        <div class="Rates-card-header">
+          <h5>قائمة المهام</h5>
+          <span class="all">الكل</span>
+        </div>
+        <div class="card-content">
+          <app-line-chart></app-line-chart>
+        </div>
+      </div>
+      <div class="col-4 card">
+        <div class="Rates-card-header">
+          <h5>قائمة المهام</h5>
+          <span class="all">الكل</span>
+        </div>
+        <div class="card-content">
+          <app-line-chart></app-line-chart>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------- -->
+  <!-- ----------PART 3--------------------- -->
+  <!-- -------------------------------------- -->
+
+  <section class="Appointment_section">
+    <div class="row custom-row">
+      <div class="col-9 card large">
+        <div class="Appointment-card-header">
+          <h5>قائمة المهام</h5>
+          <span class="all">الكل</span>
+        </div>
+        <div class="card-content">
+          <app-line-chart></app-line-chart>
+        </div>
+      </div>
+      <div class="col-3 card small">
+        <div class="Appointment-card-header">
+          <h5>قائمة المهام</h5>
+          <span class="all">الكل</span>
+        </div>
+        <div class="card-content">
+          <app-line-chart></app-line-chart>
+        </div>
+      </div>
+    </div>
   </section>
 </section>
